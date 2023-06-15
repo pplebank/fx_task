@@ -23,16 +23,16 @@ public class MarketPrice {
     @Column(name = "instrument_name")
     private String instrumentName;
 
-    @Column(name = "bid_price", scale = 4)
+    @Column(name = "bid_price", precision = 10, scale = 4)
     private BigDecimal bidPrice;
 
-    @Column(name = "ask_price", scale = 4)
+    @Column(name = "ask_price", precision = 10, scale = 4)
     private BigDecimal askPrice;
 
     @Column(name = "time")
     private LocalDateTime time;
 
-    private MarketPrice(Builder builder) {
+    public MarketPrice(Builder builder) {
         this.instrumentName = builder.instrumentName;
         this.bidPrice = builder.bidPrice;
         this.askPrice = builder.askPrice;
